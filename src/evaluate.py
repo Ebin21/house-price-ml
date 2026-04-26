@@ -8,4 +8,4 @@ def evaluate_model(model, X_test, y_test):
     rmse = np.sqrt(mse)
     r2 = r2_score(y_test, y_pred)
 
-    return rmse, r2
+    return rmse, r2, y_pred
