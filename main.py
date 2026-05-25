@@ -3,6 +3,8 @@ from src.train import *
 from src.evaluate import *
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 DATA_PATH = "data/raw/House_Price.csv"
 #DATA_PATH = "data/raw/Housing.csv"
@@ -89,7 +91,40 @@ plt.title("Error Distribution")
 
 plt.savefig("error_distribution.png")
 plt.show()
+# ==============================
+# 4. Room Number vs Price
+# ==============================
+plt.figure(figsize=(8,6))
 
+sns.scatterplot(x=df['room_num'], y=df['price'])
+
+plt.title("Number of Rooms vs House Price")
+plt.xlabel("Number of Rooms")
+plt.ylabel("House Price")
+
+plt.show()
+# ==============================
+# 5. Air Quality vs Price
+# ==============================
+plt.figure(figsize=(8,6))
+
+sns.scatterplot(x=df['air_qual'], y=df['price'])
+
+plt.title("Air Quality vs House Price")
+plt.xlabel("Air Quality")
+plt.ylabel("House Price")
+
+plt.show()
+# ==============================
+# 6. Room Number vs Price
+# ==============================
+plt.figure(figsize=(12,8))
+
+sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='coolwarm')
+
+plt.title("Feature Correlation Heatmap")
+
+plt.show()
 # # ==============================
 # # 1. Actual vs Predicted Plot
 # # ==============================
