@@ -121,3 +121,12 @@ sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='coolwarm')
 plt.title("Feature Correlation Heatmap")
 plt.show()
 # # ==============================
+# # 7. Feature Importance (Coefficients)
+# # ==============================
+coefficients = model.coef_
+feature_names = X.columns   
+coef_df = pd.DataFrame({'Feature': feature_names, 'Coefficient': coefficients})
+coef_df = coef_df.sort_values(by='Coefficient', key=abs, ascending=False)
+plt.figure(figsize=(10,6))
+sns.barplot(x='Coefficient', y='Feature', data=coef_df, palette='viridis')
+plt.title("Feature Importance (Coefficients)")  
