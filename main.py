@@ -67,13 +67,10 @@ residuals = y_test - y_pred
 plt.figure(figsize=(8,6))
 plt.style.use('ggplot')
 plt.scatter(y_pred, residuals)
-
 plt.axhline(y=0, color='red')  # zero error line
-
 plt.xlabel("Predicted Prices")
 plt.ylabel("Residuals")
 plt.title("Residual Plot")
-
 plt.savefig("residual_plot.png")
 plt.show()
 # ==============================
@@ -82,59 +79,41 @@ plt.show()
 plt.figure(figsize=(8,6))
 plt.style.use('ggplot')
 plt.hist(residuals, bins=30)
-
 plt.axvline(x=0, color='red')  # zero error center
-
 plt.xlabel("Error")
 plt.ylabel("Frequency")
 plt.title("Error Distribution")
-
 plt.savefig("error_distribution.png")
 plt.show()
 # ==============================
 # 4. Room Number vs Price
 # ==============================
 plt.figure(figsize=(8,6))
-
 sns.scatterplot(x=df['room_num'], y=df['price'])
-
 plt.title("Number of Rooms vs House Price")
 plt.xlabel("Number of Rooms")
 plt.ylabel("House Price")
-
 plt.show()
 # ==============================
 # 5. Air Quality vs Price
 # ==============================
 plt.figure(figsize=(8,6))
-
 sns.scatterplot(x=df['air_qual'], y=df['price'])
 plt.title("Air Quality vs House Price")
 plt.xlabel("Air Quality")
 plt.ylabel("House Price")
 plt.show()
-# ==============================
-# 6. Room Number vs Price
-# ==============================
-plt.figure(figsize=(12,8))
-sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='coolwarm')
-plt.title("Feature Correlation Heatmap")
+# # ==============================
+# # 6. Price Distribution Histogram
+# # ==============================
+plt.figure(figsize=(8,5))
+sns.histplot(df['price'], bins=30, kde=True)
+plt.title("Price Distribution")
+plt.xlabel("House Price")
+plt.ylabel("Frequency")
 plt.show()
 # # ==============================
-# # 7. Feature Importance (Coefficients)
-# # ==============================
-coefficients = model.coef_
-feature_names = X.columns   
-coef_df = pd.DataFrame({'Feature': feature_names, 'Coefficient': coefficients})
-coef_df = coef_df.sort_values(by='Coefficient', key=abs, ascending=False)
-plt.figure(figsize=(10,6))
-sns.barplot(x='Coefficient', y='Feature', data=coef_df, palette='viridis')
-plt.title("Feature Importance (Coefficients)")  
-plt.xlabel("Coefficient Value")
-plt.ylabel("Feature")   
-plt.show()
-# # ==============================
-# # 8. Predicted vs Actual Prices (with Residuals)      
+# # 7. Predicted vs Actual Prices (with Residuals)      
 # # ==============================
 plt.figure(figsize=(8,6))           
 sns.scatterplot(x=y_test, y=y_pred, hue=residuals, palette='coolwarm', edgecolor='k')
@@ -144,3 +123,22 @@ plt.ylabel("Predicted Prices")
 plt.title("Predicted vs Actual Prices (Colored by Residuals)")
 plt.legend(title='Residuals', loc='upper left')
 plt.show()
+###
+# # ==============================
+# # 6. Feature Correlation Heatmap
+# # ==============================
+# plt.figure(figsize=(12,8))
+# sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='coolwarm')
+# plt.title("Feature Correlation Heatmap")
+# plt.show()
+
+# coefficients = model.coef_
+# feature_names = X.columns   
+# coef_df = pd.DataFrame({'Feature': feature_names, 'Coefficient': coefficients})
+# coef_df = coef_df.sort_values(by='Coefficient', key=abs, ascending=False)
+# plt.figure(figsize=(10,6))
+# sns.barplot(x='Coefficient', y='Feature', data=coef_df, palette='viridis')
+# plt.title("Feature Importance (Coefficients)")  
+# plt.xlabel("Coefficient Value")
+# plt.ylabel("Feature")   
+# plt.show()
