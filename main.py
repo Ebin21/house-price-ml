@@ -109,58 +109,15 @@ plt.show()
 plt.figure(figsize=(8,6))
 
 sns.scatterplot(x=df['air_qual'], y=df['price'])
-
 plt.title("Air Quality vs House Price")
 plt.xlabel("Air Quality")
 plt.ylabel("House Price")
-
 plt.show()
 # ==============================
 # 6. Room Number vs Price
 # ==============================
 plt.figure(figsize=(12,8))
-
 sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='coolwarm')
-
 plt.title("Feature Correlation Heatmap")
-
 plt.show()
 # # ==============================
-# # 1. Actual vs Predicted Plot
-# # ==============================
-# plt.figure()
-# plt.scatter(y_test, y_pred)
-# plt.xlabel("Actual Prices")
-# plt.ylabel("Predicted Prices")
-# plt.title("Actual vs Predicted House Prices")
-# plt.savefig("actual_vs_predicted.png")
-# plt.show()
-
-# # ==============================
-# # 2. Residual Plot
-# # ==============================
-# residuals = y_test - y_pred
-
-# plt.figure()
-# plt.scatter(y_pred, residuals)
-# plt.xlabel("Predicted Prices")
-# plt.ylabel("Residuals")
-# plt.title("Residual Plot")
-# plt.axhline(y=0)
-# plt.savefig("residual_plot.png")
-# plt.show()
-
-# # ==============================
-# # 3. Error Distribution
-# # ==============================
-# plt.figure()
-# plt.hist(residuals, bins=30)
-# plt.xlabel("Error")
-# plt.ylabel("Frequency")
-# plt.title("Error Distribution")
-# plt.savefig("error_distribution.png")
-# plt.show()
-# # ==============================================================
-
-# print("RMSE:", rmse)
-# print("R2 Score:", r2)
