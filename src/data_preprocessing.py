@@ -11,8 +11,10 @@ def clean_data(df):
 
 def split_features_target(df, target):
     X = df.drop(target, axis=1)
+    print(f"Features before one-hot encoding: {X.columns.tolist()}")
     y = df[target]
     X = pd.get_dummies(X, drop_first=True)
+    print(f"Features after one-hot encoding: {X.columns.tolist()}")
     return X, y
 
 def scale_features(X):

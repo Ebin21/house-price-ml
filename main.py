@@ -88,41 +88,41 @@ plt.show()
 # ==============================
 # 4. Room Number vs Price
 # ==============================
-plt.figure(figsize=(8,6))
-sns.scatterplot(x=df['room_num'], y=df['price'])
-plt.title("Number of Rooms vs House Price")
-plt.xlabel("Number of Rooms")
-plt.ylabel("House Price")
-plt.show()
-# ==============================
-# 5. Air Quality vs Price
-# ==============================
-plt.figure(figsize=(8,6))
-sns.scatterplot(x=df['air_qual'], y=df['price'])
-plt.title("Air Quality vs House Price")
-plt.xlabel("Air Quality")
-plt.ylabel("House Price")
-plt.show()
+# plt.figure(figsize=(8,6))
+# sns.scatterplot(x=df['room_num'], y=df['price'])
+# plt.title("Number of Rooms vs House Price")
+# plt.xlabel("Number of Rooms")
+# plt.ylabel("House Price")
+# plt.show()
 # # ==============================
-# # 6. Price Distribution Histogram
+# # 5. Air Quality vs Price
 # # ==============================
-plt.figure(figsize=(8,5))
-sns.histplot(df['price'], bins=30, kde=True)
-plt.title("Price Distribution")
-plt.xlabel("House Price")
-plt.ylabel("Frequency")
-plt.show()
-# # ==============================
-# # 7. Predicted vs Actual Prices (with Residuals)      
-# # ==============================
-plt.figure(figsize=(8,6))           
-sns.scatterplot(x=y_test, y=y_pred, hue=residuals, palette='coolwarm', edgecolor='k')
-plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red')
-plt.xlabel("Actual Prices") 
-plt.ylabel("Predicted Prices")
-plt.title("Predicted vs Actual Prices (Colored by Residuals)")
-plt.legend(title='Residuals', loc='upper left')
-plt.show()
+# plt.figure(figsize=(8,6))
+# sns.scatterplot(x=df['air_qual'], y=df['price'])
+# plt.title("Air Quality vs House Price")
+# plt.xlabel("Air Quality")
+# plt.ylabel("House Price")
+# plt.show()
+# # # ==============================
+# # # 6. Price Distribution Histogram
+# # # ==============================
+# plt.figure(figsize=(8,5))
+# sns.histplot(df['price'], bins=30, kde=True)
+# plt.title("Price Distribution")
+# plt.xlabel("House Price")
+# plt.ylabel("Frequency")
+# plt.show()
+# # # ==============================
+# # # 7. Predicted vs Actual Prices (with Residuals)      
+# # # ==============================
+# plt.figure(figsize=(8,6))           
+# sns.scatterplot(x=y_test, y=y_pred, hue=residuals, palette='coolwarm', edgecolor='k')
+# plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red')
+# plt.xlabel("Actual Prices") 
+# plt.ylabel("Predicted Prices")
+# plt.title("Predicted vs Actual Prices (Colored by Residuals)")
+# plt.legend(title='Residuals', loc='upper left')
+# plt.show()
 ###
 # # ==============================
 # # 6. Feature Correlation Heatmap
