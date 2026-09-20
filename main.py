@@ -88,12 +88,12 @@ plt.show()
 # ==============================
 # 4. Room Number vs Price
 # ==============================
-# plt.figure(figsize=(8,6))
-# sns.scatterplot(x=df['room_num'], y=df['price'])
-# plt.title("Number of Rooms vs House Price")
-# plt.xlabel("Number of Rooms")
-# plt.ylabel("House Price")
-# plt.show()
+plt.figure(figsize=(8,6))
+sns.scatterplot(x=df['room_num'], y=df['price'])
+plt.title("Number of Rooms vs House Price")
+plt.xlabel("Number of Rooms")
+plt.ylabel("House Price")
+plt.show()
 # # ==============================
 # # 5. Air Quality vs Price
 # # ==============================
