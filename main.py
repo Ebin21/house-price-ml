@@ -97,12 +97,12 @@ plt.show()
 # # ==============================
 # # 5. Air Quality vs Price
 # # ==============================
-# plt.figure(figsize=(8,6))
-# sns.scatterplot(x=df['air_qual'], y=df['price'])
-# plt.title("Air Quality vs House Price")
-# plt.xlabel("Air Quality")
-# plt.ylabel("House Price")
-# plt.show()
+plt.figure(figsize=(8,6))
+sns.scatterplot(x=df['air_qual'], y=df['price'])
+plt.title("Air Quality vs House Price")
+plt.xlabel("Air Quality")
+plt.ylabel("House Price")
+plt.show()
 # # # ==============================
 # # # 6. Price Distribution Histogram
 # # # ==============================
