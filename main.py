@@ -106,12 +106,12 @@ plt.show()
 # # # ==============================
 # # # 6. Price Distribution Histogram
 # # # ==============================
-# plt.figure(figsize=(8,5))
-# sns.histplot(df['price'], bins=30, kde=True)
-# plt.title("Price Distribution")
-# plt.xlabel("House Price")
-# plt.ylabel("Frequency")
-# plt.show()
+plt.figure(figsize=(8,5))
+sns.histplot(df['price'], bins=30, kde=True)
+plt.title("Price Distribution")
+plt.xlabel("House Price")
+plt.ylabel("Frequency")
+plt.show()
 # # # ==============================
 # # # 7. Predicted vs Actual Prices (with Residuals)      
 # # # ==============================
